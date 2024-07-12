@@ -17,7 +17,7 @@ class _SplashScreenState extends State<SplashScreen> {
     Future.delayed(
       const Duration(seconds: 2),
       (){
-        Navigator.pushNamed(context, HomeScreen.routeName);
+        Navigator.pushReplacementNamed(context, HomeScreen.routeName);
 
       }
 
@@ -25,21 +25,22 @@ class _SplashScreenState extends State<SplashScreen> {
   }
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Column(
-        children: [
-          Spacer(),
-          Center(
-            child: Image.asset(
-              'assets/images/logo2.png',
-              width: 244,
-              height: 262,
-             
-              ),
+    return  Container(
+      color: Color(0xffFFFFFF),
+      child: Column(
+          children: [
+            const Spacer(),
+            Center(
+              child: Image.asset(
+                'assets/images/splash_bg.png',
+                width: 262,
+                height: 262,
+               
+                ),
+            ),
+            const Spacer()
+          ]
           ),
-          Spacer()
-        ]
-        ),
     );
   }
 }
