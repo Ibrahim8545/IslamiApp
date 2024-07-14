@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:islamiapp/Colors.dart';
+import 'package:islamiapp/sura_details_screen.dart';
+import 'package:islamiapp/model/sura_model.dart';
 
 class Quran extends StatelessWidget {
   Quran({super.key});
@@ -169,13 +171,22 @@ class Quran extends StatelessWidget {
               ],
             ),
             itemBuilder: (context, index) {
-              return Text(
-                SuraName[index],
-                textAlign: TextAlign.center,
-                style: TextStyle(
-                    fontSize: 25,
-                    fontWeight: FontWeight.w600,
-                    fontFamily: 'ElMessiri'),
+              return GestureDetector(
+                onTap: () {
+                  Navigator.pushNamed(context,
+                   SuraDetailsScreen.routeName,
+                   arguments: SuraModel(SuraName[index], index)
+                   );
+                  
+                },
+                child: Text(
+                  SuraName[index],
+                  textAlign: TextAlign.center,
+                  style:const  TextStyle(
+                      fontSize: 25,
+                      fontWeight: FontWeight.w600,
+                      fontFamily: 'ElMessiri'),
+                ),
               );
             },
             itemCount: SuraName.length,

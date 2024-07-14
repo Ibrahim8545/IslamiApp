@@ -26,7 +26,8 @@ class _HomeScreenState extends State<HomeScreen> {
           backgroundColor: Colors.transparent,
           appBar: AppBar(
             backgroundColor: Colors.transparent,
-            title: const Text('Islami app',
+            title: const Text(
+              'Islami app',
                 style: TextStyle(
                     fontSize: 30,
                     fontWeight: FontWeight.w700,
