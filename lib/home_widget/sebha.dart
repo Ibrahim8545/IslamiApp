@@ -99,7 +99,7 @@ class _SebhaState extends State<Sebha> {
     counter++;
     if (counter % 33 == 0) {
       index++;
-      counter++;
+     
       counter = 0;
     }
     if (index == Azkar.length) {
