@@ -3,6 +3,7 @@ import 'package:islamiapp/Colors.dart';
 import 'package:islamiapp/sura_details_screen.dart';
 import 'package:islamiapp/model/sura_model.dart';
 
+// ignore: must_be_immutable
 class Quran extends StatelessWidget {
   Quran({super.key});
   List<String> SuraName = [
@@ -195,4 +196,5 @@ class Quran extends StatelessWidget {
       ],
     );
   }
+  
 }

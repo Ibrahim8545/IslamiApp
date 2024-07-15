@@ -47,17 +47,17 @@ class _HomeScreenState extends State<HomeScreen> {
             items: const [
               BottomNavigationBarItem(
                   icon: ImageIcon(AssetImage('assets/images/quran.png')),
-                  label: ''),
+                  label: 'Quran'),
               BottomNavigationBarItem(
                   icon: ImageIcon(AssetImage('assets/images/sebha_blue.png')),
-                  label: ''),
+                  label: 'Sebha'),
               BottomNavigationBarItem(
                   icon: ImageIcon(AssetImage('assets/images/radio.png')),
-                  label: ''),
+                  label: 'Radio'),
               BottomNavigationBarItem(
                   icon: ImageIcon(AssetImage('assets/images/ahdeeth.png')),
-                  label: ''),
-              BottomNavigationBarItem(icon: Icon(Icons.settings), label: ''),
+                  label: 'Ahadeth'),
+              BottomNavigationBarItem(icon: Icon(Icons.settings), label: 'setting'),
             ],
           ),
           body: tabs[selectedIndex],
