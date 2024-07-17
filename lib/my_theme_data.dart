@@ -8,6 +8,7 @@ class MyThemeData {
         color: Colors.transparent,
         elevation: 0,
         centerTitle: true,
+        iconTheme: const IconThemeData(color: AppColor.blackColor),
         titleTextStyle: TextStyle(
             fontSize: 30,
             fontWeight: FontWeight.w700,
@@ -31,18 +32,21 @@ class MyThemeData {
                   fontSize: 30,
                   fontWeight: FontWeight.bold,
                   fontFamily: 'ElMessiri',
+                  color: Colors.black
                  
                 ),
                 bodyMedium: TextStyle(
                   fontSize: 25,
                   fontWeight: FontWeight.w600,
                   fontFamily: 'ElMessiri',
+                   color: Colors.black
                  
                 ),
                 bodySmall: TextStyle(
                   fontSize: 20,
                   fontWeight: FontWeight.normal,
                   fontFamily: 'ElMessiri',
+                   color: Colors.black
                 
                 ),
 

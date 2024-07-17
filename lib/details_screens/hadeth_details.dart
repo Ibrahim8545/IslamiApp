@@ -24,6 +24,7 @@ class HadethDetailsScreen extends StatelessWidget {
         body:Padding(
           padding: const EdgeInsets.all(18.0),
           child: Card(
+            color: Colors.white,
             shape: OutlineInputBorder(borderRadius: BorderRadius.circular(14)),
             child: Padding(
               padding: const EdgeInsets.all(18.0),
