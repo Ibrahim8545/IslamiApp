@@ -28,35 +28,26 @@ class _SuraDetailsScreenState extends State<SuraDetailsScreen> {
         image: DecorationImage(image: AssetImage('assets/images/main.png'))
       ),
       child: Scaffold(
-        backgroundColor: Colors.transparent,
+        
         appBar: AppBar(
-           backgroundColor: Colors.transparent,
+
           title: Text(
             model.name,
-            style:const  TextStyle(
-              fontSize: 30,
-              fontWeight: FontWeight.bold,
-              fontFamily: 'ElMessiri'
-            ),
+            
             ),
           centerTitle: true,
         ),
         body: Container(
-          padding: EdgeInsets.all(18),
-          margin: EdgeInsets.all(12),
+          padding:const EdgeInsets.all(18),
+          margin:const  EdgeInsets.all(12),
           child: Card(
             shape: OutlineInputBorder(borderRadius: BorderRadius.circular(14)),
             child: ListView.separated(
-              separatorBuilder: (context, index)=>Divider(thickness: 2,color: AppColor.primaryColor,),
+              separatorBuilder: (context, index)=>const Divider(thickness: 2,),
               itemBuilder:(context, index) {
                 return Text(
                   verses[index],
-                  style:const  TextStyle(
-                  fontSize: 25,
-                  fontWeight: FontWeight.w400,
-                  fontFamily: 'ElMessiri',
-                  wordSpacing: 4
-                ),
+                  style: Theme.of(context).textTheme.bodySmall,
                 textAlign: TextAlign.center,
                   );
                 

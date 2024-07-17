@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:islamiapp/Colors.dart';
+import 'package:islamiapp/details_screens/hadeth_details.dart';
 import 'package:islamiapp/model/hadeth_model.dart';
 
 class Ahadeeth extends StatefulWidget {
@@ -25,21 +26,18 @@ class _AhadeethState extends State<Ahadeeth> {
           'assets/images/ahadeth tab.png',
           height: 219,
         ),
-        const Divider(
-          thickness: 3,
-          color: AppColor.primaryColor,
+         Divider(
+         
+         
         ),
-        const Text(
+    Text(
           'Ahadith',
           textAlign: TextAlign.center,
-          style: TextStyle(
-              fontSize: 25,
-              fontFamily: 'ElMessiri',
-              fontWeight: FontWeight.w600),
+          style: Theme.of(context).textTheme.bodyLarge
         ),
         const Divider(
-          thickness: 3,
-          color: AppColor.primaryColor,
+          
+          
         ),
         Expanded(
           child: ListView.separated(
@@ -49,30 +47,35 @@ class _AhadeethState extends State<Ahadeeth> {
                 Expanded(
                     child: Icon(
                   Icons.star,
-                  color: AppColor.primaryColor,
+             
                 )),
                 Expanded(
                   flex: 3,
                   child: Divider(
                     thickness: 2,
-                    color: AppColor.primaryColor,
+                    
                   ),
                 ),
                 Expanded(
                     child: Icon(
                   Icons.star,
-                  color: AppColor.primaryColor,
+                 
                 )),
               ],
             ),
             itemBuilder: (context, index) {
-              return Text(
-                allAhadeth[index].title,
-                textAlign: TextAlign.center,
-                style: const TextStyle(
-                  fontSize: 20,
-                  fontWeight: FontWeight.w600,
-                  fontFamily: 'ElMessiri',
+              return GestureDetector(
+                onTap: () {
+                  Navigator.pushNamed(
+                    context,
+                    HadethDetailsScreen.routeName,
+                  arguments: allAhadeth[index]
+                  );
+                },
+                child: Text(
+                  allAhadeth[index].title,
+                  textAlign: TextAlign.center,
+                  style:Theme.of(context).textTheme.bodyMedium
                 ),
               );
             },

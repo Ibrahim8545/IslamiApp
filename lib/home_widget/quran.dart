@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:islamiapp/Colors.dart';
-import 'package:islamiapp/sura_details_screen.dart';
+import 'package:islamiapp/details_screens/sura_details_screen.dart';
 import 'package:islamiapp/model/sura_model.dart';
 
 // ignore: must_be_immutable
@@ -131,22 +131,13 @@ class Quran extends StatelessWidget {
           'assets/images/quran _tab.png',
           height: 227,
         ),
-        const Divider(
-          thickness: 3,
-          color: AppColor.primaryColor,
-        ),
-        const Text(
+        const Divider(),
+         Text(
           'Sura Names',
           textAlign: TextAlign.center,
-          style: TextStyle(
-              fontSize: 25,
-              fontFamily: 'ElMessiri',
-              fontWeight: FontWeight.w600),
+          style: Theme.of(context).textTheme.bodyLarge
         ),
-        const Divider(
-          thickness: 3,
-          color: AppColor.primaryColor,
-        ),
+        const Divider(),
         Expanded(
           child: ListView.separated(
             separatorBuilder: (context, index) => const Row(
@@ -155,19 +146,19 @@ class Quran extends StatelessWidget {
                 Expanded(
                     child: Icon(
                   Icons.star,
-                  color: AppColor.primaryColor,
+                  
                 )),
                 Expanded(
                   flex: 3,
                   child: Divider(
                     thickness: 2,
-                    color: AppColor.primaryColor,
+                   
                   ),
                 ),
                 Expanded(
                     child: Icon(
                   Icons.star,
-                  color: AppColor.primaryColor,
+              
                 )),
               ],
             ),
@@ -183,10 +174,7 @@ class Quran extends StatelessWidget {
                 child: Text(
                   SuraName[index],
                   textAlign: TextAlign.center,
-                  style:const  TextStyle(
-                      fontSize: 25,
-                      fontWeight: FontWeight.w600,
-                      fontFamily: 'ElMessiri'),
+                  style:Theme.of(context).textTheme.bodyMedium
                 ),
               );
             },
