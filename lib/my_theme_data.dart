@@ -95,21 +95,21 @@ class MyThemeData {
                   fontSize: 30,
                   fontWeight: FontWeight.bold,
                   fontFamily: 'ElMessiri',
-                  color: Colors.white
+                  color: AppColor.yellowColor
                  
                 ),
                 bodyMedium: TextStyle(
                   fontSize: 25,
                   fontWeight: FontWeight.w600,
                   fontFamily: 'ElMessiri',
-                  color: Colors.white
+                  color: AppColor.yellowColor
                  
                 ),
                 bodySmall: TextStyle(
                   fontSize: 20,
                   fontWeight: FontWeight.normal,
                   fontFamily: 'ElMessiri',
-                  color: Colors.white
+                  color: AppColor.yellowColor
                 
                 ),
 

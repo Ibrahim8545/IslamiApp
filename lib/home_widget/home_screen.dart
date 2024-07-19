@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:islamiapp/Colors.dart';
+
 import 'package:islamiapp/home_widget/ahadeeth.dart';
 import 'package:islamiapp/home_widget/quran.dart';
 import 'package:islamiapp/home_widget/radio.dart';
@@ -8,7 +8,7 @@ import 'package:islamiapp/home_widget/seeting_tab.dart';
 
 class HomeScreen extends StatefulWidget {
   static const String routeName = 'homeScreen';
-  HomeScreen({super.key});
+  const HomeScreen({super.key});
 
   @override
   State<HomeScreen> createState() => _HomeScreenState();
@@ -37,6 +37,8 @@ class _HomeScreenState extends State<HomeScreen> {
               selectedIndex = value;
               setState(() {});
             },
+          
+          
             
             items: const [
               BottomNavigationBarItem(
