@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 
 import 'package:islamiapp/home_widget/ahadeeth.dart';
@@ -31,8 +32,8 @@ class _HomeScreenState extends State<HomeScreen> {
         
           appBar: AppBar(
           
-            title: const Text(
-              'Islami app',
+            title:  Text(
+              'islami'.tr(),
             ),
           
           ),

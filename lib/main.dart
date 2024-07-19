@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:islamiapp/details_screens/hadeth_details.dart';
 import 'package:islamiapp/home_widget/home_screen.dart';
@@ -7,11 +8,23 @@ import 'package:islamiapp/splash_screen.dart';
 import 'package:islamiapp/details_screens/sura_details_screen.dart';
 import 'package:provider/provider.dart';
 
-void main() {
+void main()async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await EasyLocalization.ensureInitialized();
   runApp(
-    ChangeNotifierProvider(
-      create: (context) => MyProvider(),
-      child:  MyApp())
+    
+    EasyLocalization(
+     supportedLocales:
+      const [
+        Locale('en'), 
+        Locale('ar')
+        ],
+     path: "assets/translations",
+     fallbackLocale: Locale('en'),
+      child: ChangeNotifierProvider(
+        create: (context) => MyProvider(),
+        child: const  MyApp()),
+    )
       );
 }
 
@@ -23,6 +36,9 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     var pro=Provider.of<MyProvider>(context);
     return MaterialApp(
+      localizationsDelegates: context.localizationDelegates,
+      supportedLocales: context.supportedLocales,
+      locale: context.locale,
       debugShowCheckedModeBanner: false,
       themeMode: pro.appTheme,
       theme:MyThemeData.lightTheme, 

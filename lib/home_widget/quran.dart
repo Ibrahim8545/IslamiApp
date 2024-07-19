@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:islamiapp/Colors.dart';
 import 'package:islamiapp/details_screens/sura_details_screen.dart';
@@ -133,7 +134,7 @@ class Quran extends StatelessWidget {
         ),
         const Divider(),
          Text(
-          'Sura Names',
+          'sura_names'.tr(),
           textAlign: TextAlign.center,
           style: Theme.of(context).textTheme.bodyLarge
         ),
