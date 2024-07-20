@@ -43,7 +43,7 @@ class MyApp extends StatelessWidget {
       supportedLocales: context.supportedLocales,
       locale:context.locale,
       debugShowCheckedModeBanner: false,
-      themeMode: pro.appTheme,
+      themeMode: pro.appTheme ,
       theme: MyThemeData.lightTheme,
       darkTheme: MyThemeData.darkTheme,
       initialRoute: SplashScreen.routeName,
