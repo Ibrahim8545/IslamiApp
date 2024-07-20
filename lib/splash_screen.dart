@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:islamiapp/Colors.dart';
 import 'package:islamiapp/home_widget/home_screen.dart';
+import 'package:islamiapp/providers/my_providers.dart';
+import 'package:provider/provider.dart';
 
 class SplashScreen extends StatefulWidget {
   static const String routeName='splash';
@@ -25,14 +28,19 @@ class _SplashScreenState extends State<SplashScreen> {
   }
   @override
   Widget build(BuildContext context) {
+    var pro=Provider.of<MyProvider>(context);
     return  Container(
-      color: Color(0xffFFFFFF),
+      color:pro.appTheme==ThemeMode.light?
+       Color(0xffFFFFFF)
+       : AppColor.primaryDark
+       ,
       child: Column(
           children: [
             const Spacer(),
             Center(
-              child: Image.asset(
-                'assets/images/splash_bg.png',
+              child: Image.asset(pro.appTheme==ThemeMode.light?
+                'assets/images/splash_bg.png'
+                :'assets/images/splash dark.png',
                 width: 262,
                 height: 262,
                
