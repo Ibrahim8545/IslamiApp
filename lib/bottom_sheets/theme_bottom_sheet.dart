@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:islamiapp/Colors.dart';
 import 'package:islamiapp/providers/my_providers.dart';
@@ -31,11 +32,12 @@ class ThemeBottomSheet extends StatelessWidget {
           GestureDetector(
             onTap: () {
               pro.changeTheme(ThemeMode.light);
+              Navigator.pop(context);
             },
             child: Row(
               children: [
                 Text(
-                  'Light',
+                  'light'.tr(),
                   style: Theme.of(context).
                   textTheme.
                   bodyMedium?.
@@ -49,7 +51,7 @@ class ThemeBottomSheet extends StatelessWidget {
                   ),
                 const Spacer(),
                    pro.appTheme==ThemeMode.light ? 
-                Icon(
+                const Icon(
                   size: 35,
                
                   Icons.done
@@ -63,11 +65,12 @@ class ThemeBottomSheet extends StatelessWidget {
           GestureDetector(
             onTap: () {
               pro.changeTheme(ThemeMode.dark);
+              Navigator.pop(context);
             },
             child: Row(
               children: [
                 Text(
-                  'Dark',
+                  'dark'.tr(),
                   style: Theme.of(context).
                   textTheme.
                   bodyMedium?.

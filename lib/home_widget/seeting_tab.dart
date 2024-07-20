@@ -1,20 +1,25 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:islamiapp/Colors.dart';
 import 'package:islamiapp/bottom_sheets/langauge_bottom_sheet.dart';
 import 'package:islamiapp/bottom_sheets/theme_bottom_sheet.dart';
+import 'package:islamiapp/providers/my_providers.dart';
+import 'package:provider/provider.dart';
 
 class SettingTab extends StatelessWidget {
   const SettingTab({super.key});
 
   @override
   Widget build(BuildContext context) {
+    var pro=Provider.of<MyProvider>(context);
+    Locale currentLocale=context.locale;
     return Padding(
       padding: const EdgeInsets.all(18.0),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
           Text(
-            'Theme',
+            'theme'.tr(),
             style: Theme.of(context).textTheme.bodyMedium,
           ),
           const SizedBox(
@@ -35,7 +40,9 @@ class SettingTab extends StatelessWidget {
                   borderRadius: BorderRadius.circular(24),
                   border: Border.all(color: AppColor.primaryColor)),
               child: Text(
-                'Light',
+             pro.appTheme==ThemeMode.light?   
+             'light'.tr():
+             'dark'.tr(),
                 style: Theme.of(context).textTheme.bodySmall,
               ),
             ),
@@ -44,7 +51,7 @@ class SettingTab extends StatelessWidget {
             height: 24,
           ),
           Text(
-            'Language',
+            'language'.tr(),
             style: Theme.of(context).textTheme.bodyMedium,
           ),
           const SizedBox(
@@ -65,7 +72,8 @@ class SettingTab extends StatelessWidget {
                   borderRadius: BorderRadius.circular(24),
                   border: Border.all(color: AppColor.primaryColor)),
               child: Text(
-                'Arabic',
+                currentLocale!=Locale('en')?
+             'arabic'.tr():'english'.tr(),
                 style: Theme.of(context).textTheme.bodySmall,
               ),
             ),

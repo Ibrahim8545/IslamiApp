@@ -1,11 +1,16 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:islamiapp/Colors.dart';
+import 'package:islamiapp/providers/my_providers.dart';
+import 'package:provider/provider.dart';
 
 class LanguageBottomSheet  extends StatelessWidget {
   const LanguageBottomSheet  ({super.key});
 
   @override
   Widget build(BuildContext context) {
+    var pro = Provider.of<MyProvider>(context);
+    Locale currentLocale=context.locale;
     return Container(
      
       decoration:const BoxDecoration(
@@ -23,38 +28,56 @@ class LanguageBottomSheet  extends StatelessWidget {
         mainAxisSize: MainAxisSize.min,
       
         children: [
-          Row(
-            children: [
-              Text(
-                'English',
-                style: Theme.of(context).
-                textTheme.
-                bodyMedium?.
-                copyWith(
-                  color: AppColor.primaryColor
-                ),
-                ),
-              const Spacer(),
-              Icon(Icons.done,size: 35,),
-            ],
+          InkWell(
+            onTap: () {
+              //pro.changeLanguage(context,'en');
+              context.setLocale(Locale('en'));
+            },
+            child: Row(
+              children: [
+                Text(
+                  'english'.tr(),
+                  style: Theme.of(context).
+                  textTheme.
+                  bodyMedium?.
+                  copyWith(
+                    color:currentLocale==Locale('en')?
+                     AppColor.primaryColor:AppColor.blackColor
+                  ),
+                  ),
+                const Spacer(),
+                currentLocale==Locale('en')?
+                Icon(Icons.done,size: 35,):SizedBox(),
+              ],
+            ),
           ),
 
           const SizedBox(height: 30,),
 
-          Row(
-            children: [
-              Text(
-                'Arabic',
-                style: Theme.of(context).
-                textTheme.
-                bodyMedium?.
-                copyWith(
-                  color: Colors.black
-                ),
-                ),
-              const Spacer(),
-              //Icon(Icons.done,size: 35,),
-            ],
+          InkWell(
+            onTap: () {
+              context.setLocale(Locale('ar'));
+                //pro.changeLanguage(context,'ar');
+            },
+            child: Row(
+              children: [
+                Text(
+                  'arabic'.tr(),
+                  style: Theme.of(context).
+                  textTheme.
+                  bodyMedium?.
+                  copyWith(
+                    
+                    color:currentLocale!=Locale('en')?
+                     AppColor.primaryColor:AppColor.blackColor
+                    
+                  ),
+                  ),
+                const Spacer(),
+                               currentLocale!=Locale('en')?
+                Icon(Icons.done,size: 35,):SizedBox()
+              ],
+            ),
           ),
           
                  

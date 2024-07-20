@@ -1,5 +1,11 @@
 {
     "islami" : "اسلامي",
     "sura_names" : "اسم الصوره",
-    "ahadeth" : "الاحاديث"
+    "ahadeth" : "الاحاديث",
+    "theme" : "المظهر",
+    "dark" : "ليلي",
+    "light" : "نهاري",
+    "language" : "اللغه",
+    "english" : "انجليزي",
+    "arabic" : "عربي"
 }

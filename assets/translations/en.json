@@ -1,5 +1,11 @@
 {
     "islami" : "Islami",
     "sura_names" : "SuraNames",
-    "ahadeth" : "Ahadeth"
+    "ahadeth" : "Ahadeth",
+    "theme" : "Theme",
+    "dark" : "Dark",
+    "light" : "Light",
+    "language" : "Language",
+    "english" : "English",
+    "arabic" : "Arabic"
 }
